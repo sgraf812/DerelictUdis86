@@ -1,0 +1,16 @@
+{
+    "name": "derelict_extras-udis86",
+    "description": "A dynamic binding to the udis86 library.",
+    "homepage": "https://github.com/sgraf812/DerelictUdis86",
+    "license": "Boost",
+    "authors": [
+        "sgraf812"
+    ],
+
+    "targetName": "DerelictUdis86",
+    "targetPath": "lib",
+
+    "dependencies": {
+        "derelict-util": "~master"
+    }
+}
