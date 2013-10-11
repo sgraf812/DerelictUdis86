@@ -54,11 +54,10 @@ extern(C) nothrow
     alias uint function(const ud* u) da_ud_insn_len;
     alias const(ud_operand)* function(const ud *u, uint n) da_ud_insn_opr;
     alias int function(const ud_operand *opr) da_ud_opr_is_sreg;
-    alias int function(const ud_operand *opr) da_ud_opr_isgpr;
+    alias int function(const ud_operand *opr) da_ud_opr_is_gpr;
     alias const(ubyte)* function(ud_mnemonic_code c) da_ud_lookup_mnemonic;
     alias void function(ud*, void*) da_ud_set_user_opaque_data;
     alias void* function(const ud*) da_ud_get_user_opaque_data;
-    alias uint64_t function(const ud*, const ud_operand*) da_ud_insn_sext_imm;
     alias void function(ud *u, char *buf, size_t size) da_ud_set_asm_buffer;
     alias void function(ud *u, sym_resolver_t) da_ud_set_sym_resolver;
 }
@@ -70,7 +69,7 @@ __gshared
     da_ud_set_pc ud_set_pc;
     da_ud_set_input_hook ud_set_input_hook;
     da_ud_set_input_buffer ud_set_input_buffer;
-    //da_ud_set_input_file ud_set_input_file; // only if __UD_STANDALONE, which will never happen in a lib
+    da_ud_set_input_file ud_set_input_file;
     da_ud_set_vendor ud_set_vendor;
     da_ud_set_syntax ud_set_syntax;
     da_ud_input_skip ud_input_skip;
@@ -86,11 +85,10 @@ __gshared
     da_ud_insn_len ud_insn_len;
     da_ud_insn_opr ud_insn_opr;
     da_ud_opr_is_sreg ud_opr_is_sreg;
-    da_ud_opr_isgpr ud_opr_isgpr;
+    da_ud_opr_is_gpr ud_opr_is_gpr;
     da_ud_lookup_mnemonic ud_lookup_mnemonic;
     da_ud_set_user_opaque_data ud_set_user_opaque_data;
     da_ud_get_user_opaque_data ud_get_user_opaque_data;
-    da_ud_insn_sext_imm ud_insn_sext_imm;
     da_ud_set_asm_buffer ud_set_asm_buffer;
     da_ud_set_sym_resolver ud_set_sym_resolver;
 }

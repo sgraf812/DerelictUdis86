@@ -66,7 +66,7 @@ class DerelictUdis86Loader : SharedLibLoader
         bindFunc(cast(void**)&ud_set_pc, "ud_set_pc");
         bindFunc(cast(void**)&ud_set_input_hook, "ud_set_input_hook");
         bindFunc(cast(void**)&ud_set_input_buffer, "ud_set_input_buffer");
-        //bindFunc(cast(void**)&ud_set_input_file, "ud_set_input_file"); // only if __UD_STANDALONE, which will never happen in a lib
+        bindFunc(cast(void**)&ud_set_input_file, "ud_set_input_file");
         bindFunc(cast(void**)&ud_set_vendor, "ud_set_vendor");
         bindFunc(cast(void**)&ud_set_syntax, "ud_set_syntax");
         bindFunc(cast(void**)&ud_input_skip, "ud_input_skip");
@@ -82,11 +82,10 @@ class DerelictUdis86Loader : SharedLibLoader
         bindFunc(cast(void**)&ud_insn_len, "ud_insn_len");
         bindFunc(cast(void**)&ud_insn_opr, "ud_insn_opr");
         bindFunc(cast(void**)&ud_opr_is_sreg, "ud_opr_is_sreg");
-        bindFunc(cast(void**)&ud_opr_isgpr, "ud_opr_isgpr");
+        bindFunc(cast(void**)&ud_opr_is_gpr, "ud_opr_is_gpr");
         bindFunc(cast(void**)&ud_lookup_mnemonic, "ud_lookup_mnemonic");
         bindFunc(cast(void**)&ud_set_user_opaque_data, "ud_set_user_opaque_data");
         bindFunc(cast(void**)&ud_get_user_opaque_data, "ud_get_user_opaque_data");
-        bindFunc(cast(void**)&ud_insn_sext_imm, "ud_insn_sext_imm");
         bindFunc(cast(void**)&ud_set_asm_buffer, "ud_set_asm_buffer");
         bindFunc(cast(void**)&ud_set_sym_resolver, "ud_set_sym_resolver");
         bindFunc(cast(void**)&ud_init, "ud_init");
