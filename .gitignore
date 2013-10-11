@@ -1,1 +1,4 @@
-.dub/* 
+.dub
+lib
+bin
+update.txt 
