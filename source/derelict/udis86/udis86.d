@@ -66,7 +66,7 @@ class DerelictUdis86Loader : SharedLibLoader
         bindFunc(cast(void**)&ud_set_pc, "ud_set_pc");
         bindFunc(cast(void**)&ud_set_input_hook, "ud_set_input_hook");
         bindFunc(cast(void**)&ud_set_input_buffer, "ud_set_input_buffer");
-        bindFunc(cast(void**)&ud_set_input_file, "ud_set_input_file");
+        //bindFunc(cast(void**)&ud_set_input_file, "ud_set_input_file"); // only if __UD_STANDALONE, which will never happen in a lib
         bindFunc(cast(void**)&ud_set_vendor, "ud_set_vendor");
         bindFunc(cast(void**)&ud_set_syntax, "ud_set_syntax");
         bindFunc(cast(void**)&ud_input_skip, "ud_input_skip");

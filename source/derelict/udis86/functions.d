@@ -70,7 +70,7 @@ __gshared
     da_ud_set_pc ud_set_pc;
     da_ud_set_input_hook ud_set_input_hook;
     da_ud_set_input_buffer ud_set_input_buffer;
-    da_ud_set_input_file ud_set_input_file;
+    //da_ud_set_input_file ud_set_input_file; // only if __UD_STANDALONE, which will never happen in a lib
     da_ud_set_vendor ud_set_vendor;
     da_ud_set_syntax ud_set_syntax;
     da_ud_input_skip ud_input_skip;
