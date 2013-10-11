@@ -27,6 +27,8 @@ DEALINGS IN THE SOFTWARE.
 */
 module derelict.udis86.functions;
 
+import std.stdint;
+import std.c.stdio;
 import derelict.udis86.types;
 
 extern(C) nothrow
@@ -92,3 +94,6 @@ __gshared
     da_ud_set_asm_buffer ud_set_asm_buffer;
     da_ud_set_sym_resolver ud_set_sym_resolver;
 }
+
+alias ud_translate_intel UD_SYN_INTEL;
+alias ud_translate_att UD_SYN_ATT;

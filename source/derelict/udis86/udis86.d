@@ -29,8 +29,8 @@ module derelict.udis86.udis86;
 
 public
 {
-    import derelict.enet.types;
-    import derelict.enet.funcs;
+    import derelict.udis86.types;
+    import derelict.udis86.functions;
 }
 
 private
@@ -98,9 +98,9 @@ class DerelictUdis86Loader : SharedLibLoader
     }
 }
 
-__gshared DerelictENetLoader DerelictENet;
+__gshared DerelictUdis86Loader DerelictUdis86;
 
 shared static this()
 {
-    DerelictENet = new DerelictENetLoader();
+    DerelictUdis86 = new DerelictUdis86Loader();
 }

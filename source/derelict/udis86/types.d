@@ -866,8 +866,6 @@ struct ud
  * Type-definitions
  * -----------------------------------------------------------------------------
  */
-alias ud_translate_intel UD_SYN_INTEL;
-alias ud_translate_att UD_SYN_ATT;
 enum UD_EOI = (-1);
 enum UD_INP_CACHE_SZ = 32;
 enum UD_VENDOR_AMD = 0;
