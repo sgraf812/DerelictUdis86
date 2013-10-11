@@ -807,14 +807,14 @@ struct ud
      */
     input_hook_t inp_hook;
     FILE*     inp_file;
+    const uint8_t* inp_buf;
+    size_t    inp_buf_size;
+    size_t    inp_buf_index;
     uint8_t   inp_curr;
-    uint8_t   inp_fill;
-    uint8_t   inp_ctr;
-    uint8_t*  inp_buff;
-    uint8_t*  inp_buff_end;
-    uint8_t   inp_end;
-    uint8_t   inp_cache[256];
+    size_t    inp_ctr;
     uint8_t   inp_sess[64];
+    int       inp_end;
+    int       inp_peek;
     
     translator_t translator;
     uint64_t  insn_offset;
@@ -835,31 +835,32 @@ struct ud
     uint8_t   dis_mode;
     uint64_t  pc;
     uint8_t   vendor;
-    void* mapen;
     ud_mnemonic_code mnemonic;
-    ud_operand operand[3];
+    ud_operand operand[4];
     uint8_t   error;
+    uint8_t   _rex;
     uint8_t   pfx_rex;
     uint8_t   pfx_seg;
     uint8_t   pfx_opr;
     uint8_t   pfx_adr;
     uint8_t   pfx_lock;
+    uint8_t   pfx_str;
     uint8_t   pfx_rep;
     uint8_t   pfx_repe;
     uint8_t   pfx_repne;
-    uint8_t   pfx_insn;
-    uint8_t   default64;
     uint8_t   opr_mode;
     uint8_t   adr_mode;
     uint8_t   br_far;
     uint8_t   br_near;
-    uint8_t   implicit_addr;
     uint8_t   have_modrm;
     uint8_t   modrm;
+    uint8_t   vex_op;
+    uint8_t   vex_b1;
+    uint8_t   vex_b2;
     uint8_t   primary_opcode;
-    void*     user_opaque_data;
-    void*     itab_entry;
-    void*     le;
+    void *    user_opaque_data;
+    void *    itab_entry;
+    void *    le;
 }
 
 /* -----------------------------------------------------------------------------
